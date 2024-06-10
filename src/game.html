@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hohoemi Vidal</title>
+    <meta name="title" content="ほほえみヴィダル">
+    <meta name="description" content="ぶどうを集めるとヴィダルが笑ってくれるミニゲームです">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="ほほえみヴィダル">
+    <meta property="twitter:description" content="ぶどうを集めるとヴィダルが笑ってくれるミニゲームです">
+    <meta property="twitter:image" content="resource/icon.png">
+    <link rel="shortcut icon" href="resource/icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="resource/icon.png">
+</head>
+<body class="gamebody">
+    <div id="start">START!</div>
+    <div id="infoarea">
+        <div id="letter">
+            <div id="timecount">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="black" stroke-width="7"/> <!-- 時計の外枠 -->
+                    <line x1="50" y1="50" x2="50" y2="30" stroke="black" stroke-width="7"/> <!-- 短針 -->
+                    <line x1="50" y1="50" x2="70" y2="50" stroke="black" stroke-width="7"/> <!-- 長針 -->
+                    <circle cx="50" cy="50" r="2" fill="black"/> <!-- 時計の中心 -->
+                </svg>
+                <div id="remaining">10</div>
+            </div>
+            <div id="score">Score: 0</div>
+        </div>
+        <div id="vidal"></div>
+    </div>
+
+    <div id="gamearea">
+        <div id="appear"></div>
+        <div id="disappear"><img src="./resource/cage.png" alt="drop zone"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

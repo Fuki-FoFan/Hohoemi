@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINISH!</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="title" content="ほほえみヴィダル">
+    <meta name="description" content="ぶどうを集めるとヴィダルが笑ってくれるミニゲームです">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="ほほえみヴィダル">
+    <meta property="twitter:description" content="ぶどうを集めるとヴィダルが笑ってくれるミニゲームです">
+    <meta property="twitter:image" content="resource/icon.png">
+    <link rel="shortcut icon" href="resource/icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="resource/icon.png">
+</head>
+
+<body>
+    <div id="finish">
+        <div id="comment">FINISH!!</div>
+        <img id="finishicon">
+        <div id="finalscore"></div>
+        <div id="eachcount">
+            <img src="./resource/grape_white.png">
+            <div id="grape0">✕</div>
+            <img src="./resource/grape_green.png">
+            <div id="grape1">✕</div>
+            <img src="./resource/grape_red.png">
+            <div id="grape2">✕</div>
+            <img src="./resource/grape_black.png">
+            <div id="grape3">✕</div>
+        </div>
+        <div id="finishbutton">
+            <a href="./game.html" class="button">RETRY</a>
+            <a href="../index.html" class="button">HOME</a>
+        </div>
+        <div id="bestscore">
+            <div>~best score~</div>
+            <div id="scoretable">
+                <div id="first"></div>
+                <div id="second"></div>
+                <div id="third"></div>
+            </div>
+            <a href="#" onclick="resetScore()" class="button">RESET</a>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            const score = localStorage.getItem("score");
+            const counter = JSON.parse(localStorage.getItem("counter"));
+            let bestscore = JSON.parse(localStorage.getItem("bestscore"));
+            const scoreDisplay = document.getElementById('finalscore');
+
+            if (score !== null) {
+                scoreDisplay.innerText = `Score: ${score}`;
+                if (score < 50) {
+                    document.getElementById('finishicon').setAttribute("src", "./resource/smallvidal1.png");
+                } else if (score < 100) {
+                    document.getElementById('finishicon').setAttribute("src", "./resource/smallvidal2.png");
+                } else if (score < 200) {
+                    document.getElementById('finishicon').setAttribute("src", "./resource/smallvidal3.png");
+                } else if (score < 300) {
+                    document.getElementById('finishicon').setAttribute("src", "./resource/smallvidal4.png");
+                } else if (score >= 300) {
+                    document.getElementById('finishicon').setAttribute("src", "./resource/smallvidal5.png");
+                }
+            } else {
+                scoreDisplay.innerText = "Error!";
+            }
+
+            for (let i = 0; i < counter.length; i++) {
+                document.getElementById("grape" + i).innerText = `✕${counter[i]}　`
+            }
+            document.getElementById("first").innerHTML = `${bestscore[0]}`;
+            document.getElementById("second").innerHTML = `${bestscore[1]}`;
+            document.getElementById("third").innerHTML = `${bestscore[2]}`;
+            localStorage.setItem("bestscore", JSON.stringify(bestscore));
+        };
+        function resetScore() {
+            localStorage.removeItem('bestscore');
+        }
+    </script>
+</body>
+
+</html>
