@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harikomi Horus</title>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:url" content="https://fuki-fofan.github.io/Hohoemi/horus/index.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="はりこみホルス" />
+    <meta property="og:description" content="ホルスの眼と犯人を逮捕するミニゲームです" />
+    <meta property="og:site_name" content="フーファンFG" />
+    <meta property="og:image" content="https://fuki-fofan.github.io/Hohoemi/vidal/src/resource/icon.png" />
+    <meta name="title" content="はりこみホルス" />
+    <meta name="description" content="ホルスの眼と犯人を逮捕するミニゲームです" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@Fuki_FoFan" />
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="apple-touch-icon" href="">
+</head>
+
+<body id="horus-body">
+    <div id="infoarea">
+        <div id="letter">
+            <div id="timecount">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="black" stroke-width="7"/> <!-- 時計の外枠 -->
+                    <line x1="50" y1="50" x2="50" y2="30" stroke="black" stroke-width="7"/> <!-- 短針 -->
+                    <line x1="50" y1="50" x2="70" y2="50" stroke="black" stroke-width="7"/> <!-- 長針 -->
+                    <circle cx="50" cy="50" r="2" fill="black"/> <!-- 時計の中心 -->
+                </svg>
+                <div id="timer">20</div>
+            </div>
+            <div id="score">Score: 0</div>
+        </div>
+        <div id="chara"></div>
+    </div>
+    <div id="game-board">
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+        <div class="hole" data-hole="0" data-timer="0"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

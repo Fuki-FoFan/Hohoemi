@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harikomi Horus</title>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:url" content="https://fuki-fofan.github.io/Hohoemi/horus/index.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="はりこみホルス" />
+    <meta property="og:description" content="ホルスの眼と犯人を逮捕するミニゲームです" />
+    <meta property="og:site_name" content="フーファンFG" />
+    <meta property="og:image" content="https://fuki-fofan.github.io/Hohoemi/vidal/src/resource/icon.png" />
+    <meta name="title" content="はりこみホルス" />
+    <meta name="description" content="ホルスの眼と犯人を逮捕するミニゲームです" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@Fuki_FoFan" />
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="apple-touch-icon" href="">
+</head>
+
+<body>
+    <div id="finish">
+        <div id="comment">FINISH!!</div>
+        <img id="finishicon">
+        <div id="finalscore"></div>
+        <div id="finishbutton">
+            <a href="./finish.html" class="button">RETRY</a>
+            <a href="../gameIndex.html" class="button">HOME</a>
+        </div>
+        <div id="bestscore">
+            <div>~best score~</div>
+            <div id="scoretable">
+                <div id="first"></div>
+                <div id="second"></div>
+                <div id="third"></div>
+            </div>
+            <a href="#" onclick="resetScore()" class="button">RESET</a>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            const score = Number(localStorage.getItem("score_horus_easy"));
+            let bestscore = JSON.parse(localStorage.getItem("bestscore_horus_easy")) ?? [0, 0, 0];
+            bestscore.push(score);
+            bestscore.sort((a, b) => b - a);
+            bestscore.pop();
+            const scoreDisplay = document.getElementById('finalscore');
+
+            if (score !== null) {
+                scoreDisplay.innerText = `Score: ${score}`;
+            } else {
+                scoreDisplay.innerText = "Error!";
+            }
+            
+
+            document.getElementById("first").innerHTML = `${bestscore[0]}`;
+            document.getElementById("second").innerHTML = `${bestscore[1]}`;
+            document.getElementById("third").innerHTML = `${bestscore[2]}`;
+            localStorage.setItem("bestscore", JSON.stringify(bestscore));
+        };
+        function resetScore() {
+            localStorage.removeItem('bestscore');
+        }
+    </script>
+</body>
+
+</html>
