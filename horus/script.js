@@ -1,6 +1,5 @@
 function startGame() {
     score     =  0;
-    timeLeft  =  20;
     document.getElementById('score').textContent = `スコア: ${score}`;
     document.getElementById('timer').textContent = `残り時間: ${timeLeft}秒`;
 
@@ -155,9 +154,23 @@ function getScoreTable(mode) {
     }
 }
 
+function getTimeLeft(mode) {
+    switch (mode) {
+        case 'easy':
+            return 20;
+        case 'normal':
+            return 30;
+        case 'hard':
+            return 30;
+        default:
+            return 20;
+            break;
+    }
+}
+
 let score = 0;
 let gameInterval = null;
-let timeLeft = 0;
+let timeLeft = getTimeLeft(getMode());
 let timerInterval = null;
 const scoreTable = getScoreTable(getMode());
 const tablekeys = Object.keys(scoreTable);
