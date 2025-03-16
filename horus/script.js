@@ -6,10 +6,6 @@ function startGame() {
     if (gameInterval) clearInterval(gameInterval);
     if (timerInterval) clearInterval(timerInterval);
 
-    holes.forEach(hole => {
-        hole.addEventListener('click', whackAMole);
-    });
-
     gameInterval = setInterval(() => moleAppear(1), 1000);
 
     timerInterval = setInterval(() => {
