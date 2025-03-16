@@ -1,0 +1,141 @@
+:root{
+    --chara-img: url(cage.png);
+    --chara-width: 100px;
+    --chara-height: 50px;
+    --itemA-img: url(Ggrape.png);
+    --itemB-img: url(Pgrape.png);
+    --item-width: 30px;
+    --item-height: 30px;
+    --bird-img: url(partyordie.gif);
+    --bird-width: 35px;
+    --bird-height: 25px;
+    --pidan-img: url(egg_pitan.png);
+    --pidan-width: 44px;
+    --pidan-height: 36px;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #e4f3df;
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-displayer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    top: 20px;
+    left: 20px;
+}
+
+#timer {
+    position: relative;
+    font-size: 24px;
+    color: black;
+}
+
+#score {
+    position: relative;
+    font-size: 24px;
+    color: black;
+}
+
+
+#notion {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#start {
+    z-index: 100;
+    font-size: 36px;
+    color: black;
+}
+#finish {
+    z-index: 100;
+    font-size: 36px;
+    color: black;
+}
+
+
+#game-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#character {
+    position: absolute;
+    width: var(--chara-width);
+    height: var(--chara-height);
+    background-image: var(--chara-img);
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#item-container {
+    position: relative;
+    flex: none;
+    width: 900px;
+    height: 100%;
+}
+
+.itemA {
+    position: absolute;
+    width: var(--item-width);
+    height: var(--item-width);
+    background-image: var(--itemA-img);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.itemB {
+    position: absolute;
+    width: var(--item-width);
+    height: var(--item-width);
+    background-image: var(--itemB-img);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.bird {
+    position: absolute;
+    width: var(--bird-width);
+    height: var(--bird-height);
+    background-image: var(--bird-img);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.pidan {
+    position: absolute;
+    width: var(--pidan-width);
+    height: var(--pidan-height);
+    background-image: var(--pidan-img);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}

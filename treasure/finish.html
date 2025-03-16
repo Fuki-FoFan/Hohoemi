@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finish!</title>
+</head>
+<body>
+    <div>FINISH</div>
+    <div id="score"></div>
+    <div id="bestscore">
+        <div id="first"></div>
+        <div id="second"></div>
+        <div id="third"></div>
+    </div>
+    <div id="log">
+        <div id="pidan"></div>
+        <div id="bird"></div>
+        <div id="itemB"></div>
+        <div id="itemA"></div>
+    </div>
+    <a href="game.html" class="button">RETRY</a>
+    <a href="game.html" class="button">HOME</a>
+</body>
+<script>
+    document.getElementById('score').innerText = localStorage.getItem('score');
+    let scoreLog = JSON.parse(localStorage.getItem('scorelog'));
+    document.getElementById('pidan').innerText = scoreLog.pidan;
+    document.getElementById('bird').innerText = scoreLog.bird;
+    document.getElementById('itemB').innerText = scoreLog.itemB;
+    document.getElementById('itemA').innerText = scoreLog.itemA;
+    document.getElementById('first').innerText = scoreLog.bestscore[0];
+    document.getElementById('second').innerText = scoreLog.bestscore[1];
+    document.getElementById('third').innerText = scoreLog.bestscore[2];
+</script>
+</html>
