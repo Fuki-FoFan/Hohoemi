@@ -1,0 +1,190 @@
+:root {
+    font-size: 2.9vmin;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, min(7.5rem, 100px));
+    grid-gap: 0.8rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.hole {
+    width: 7.5rem;
+    max-width: 100px;
+    height: 7.5rem;
+    max-height: 100px;
+    background-color: #ddd;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+@media (orientation: landscape) {
+    #infoarea {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 50;
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    #chara {
+        width: 10vmax;
+        height: 15vmax;
+        background-color: #0000ff;
+    }
+}
+@media (orientation: portrait) {
+    #infoarea {
+        z-index: 50;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #chara {
+        position: absolute;
+        bottom: 1.5vmax;
+        left: 1.5vmax;
+        width: 25vmax;
+        height: 35vmax;
+        background-color: #0000ff;
+    }
+}
+
+#timecount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#score,
+#timer {
+    display: inline-block;
+    font-size: max(1.5rem, 30px);
+}
+svg {
+    width: max(1.2rem, 25px);
+    height: max(1.2rem, 25px);
+    padding-right: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+.hole.parfait {
+    background-color: #ff00d9;
+    z-index: 100;
+}
+.hole.cookie {
+    background-color: #0000ff;
+    z-index: 100;
+}
+.hole.mousseCake {
+    background-color: #0000ff;
+    z-index: 100;
+}
+.hole.blueCheese {
+    background-color: #00d9ff;
+    z-index: 100;
+}
+.hole.schupfnudel {
+    background-color: #0000ff;
+    z-index: 100;
+}
+.hole.moussaka {
+    background-color: #0000ff;
+    z-index: 100;
+}
+.hole.kaiserschmarrn {
+    background-color: #0000ff;
+    z-index: 100;
+}
+.hole.hakarl {
+    background-color: #0000ff;
+    z-index: 100;
+}
+.hole.whisky {
+    background-color: #0000ff;
+    z-index: 100;
+}
+.hole.minestrone {
+    background-color: #0000ff;
+    z-index: 100;
+}
+.hole.cremeBrulee {
+    background-color: #ffc400c1;
+    z-index: 100;
+}
+.hole.turducken {
+    background-color: #ff0000;
+    z-index: 100;
+}
+.hole.panDeMuerto {
+    background-color: #ff7300;
+    z-index: 100;
+}
+
+.hole.parfait.whacked {
+    background-color: #8888ff;
+}
+.hole.cookie.whacked {
+    background-color: #8888ff;
+}
+.hole.mousseCake.whacked {
+    background-color: #8888ff;
+}
+.hole.blueCheese.whacked {
+    background-color: #8888ff;
+}
+.hole.schupfnudel.whacked {
+    background-color: #8888ff;
+}
+.hole.moussaka.whacked {
+    background-color: #8888ff;
+}
+.hole.kaiserschmarrn.whacked {
+    background-color: #8888ff;
+}
+.hole.hakarl.whacked {
+    background-color: #8888ff;
+}
+.hole.whisky.whacked {
+    background-color: #8888ff;
+}
+.hole.minestrone.whacked {
+    background-color: #8888ff;
+}
+.hole.cremeBrulee.whacked {
+    background-color: #8888ff;
+}
+.hole.turducken.whacked {
+    background-color: #8888ff;
+}
+.hole.panDeMuerto.whacked {
+    background-color: #8888ff;
+}

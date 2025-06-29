@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harikomi Horus</title>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:url" content="https://fuki-fofan.github.io/Hohoemi/horus/finish.html" />
+    <meta property="og:title" content="はりこみホルス" />
+    <meta property="og:description" content="ホルスの眼と犯人を逮捕するミニゲームです" />
+    <meta property="og:site_name" content="フーファンFG" />
+    <meta property="og:image" content="https://fuki-fofan.github.io/Hohoemi/vidal/src/resource/icon.png" />
+    <meta name="title" content="はりこみホルス" />
+    <meta name="description" content="ホルスの眼と犯人を逮捕するミニゲームです" />
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="apple-touch-icon" href="">
+    <style>
+        :root {
+            font-size: 2.9vmin;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        #finish {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+        }
+        #finish div, #finish img{
+            padding: 15px 0px 0px 0px;
+        }
+        #bestscore {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+        }
+        #bestscore div {
+            font-size: 0.95rem;
+            padding: 0px 5px;
+        }
+        #scoretable {
+            display: flex;
+            flex-flow: row;
+        }
+        #first::before {
+            content: "\1F947";
+        }
+        #second::before {
+            content: "\1F948";
+        }
+        #third::before {
+            content: "\1F949";
+        }
+    </style>
+</head>
+
+<body>
+    <div id="finish">
+        <div id="comment">FINISH!!</div>
+        <img id="finishicon">
+        <div id="finalscore"></div>
+        <div id="finishbutton">
+            <a href="./game.html" class="button">RETRY</a>
+            <a href="./index.html" class="button">HOME</a>
+        </div>
+        <div id="bestscore">
+            <div>~best score~</div>
+            <div id="scoretable">
+                <div id="first"></div>
+                <div id="second"></div>
+                <div id="third"></div>
+            </div>
+            <a href="#" onclick="resetScore()" class="button">RESET</a>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            const score = Number(localStorage.getItem("score_horus_easy"));
+            let bestscore = JSON.parse(localStorage.getItem("bestscore_horus_easy")) ?? [0, 0, 0];
+            bestscore.push(score);
+            bestscore.sort((a, b) => b - a);
+            bestscore.pop();
+            const scoreDisplay = document.getElementById('finalscore');
+
+            if (score !== null) {
+                scoreDisplay.innerText = `Score: ${score}`;
+            } else {
+                scoreDisplay.innerText = "Error!";
+            }
+            
+
+            document.getElementById("first").innerHTML = `${bestscore[0]}`;
+            document.getElementById("second").innerHTML = `${bestscore[1]}`;
+            document.getElementById("third").innerHTML = `${bestscore[2]}`;
+            localStorage.setItem("bestscore", JSON.stringify(bestscore));
+        };
+        function resetScore() {
+            localStorage.removeItem('bestscore');
+        }
+    </script>
+</body>
+
+</html>
