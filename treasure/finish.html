@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINISH!</title>
+    <meta name="description" content="八宝飯をお宝のもとに導きましょう" />
+    <meta property="og:url" content="https://fuki-fofan.github.io/Hohoemi/treasure/index.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="ほくそえみ八宝飯" />
+    <meta property="og:description" content="八宝飯をお宝のもとに導きましょう" />
+    <meta property="og:site_name" content="フーファンFG" />
+    <meta property="og:image" content="https://fuki-fofan.github.io/Hohoemi/treasure/resource/icon.png" />
+    <link rel="shortcut icon" href="resource/icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="resource/icon.png">
+    <style>
+        #finish {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+        }
+
+        #finishImg {
+            width: 380px;
+            height: 200px;
+            display: grid;
+            place-items: center;
+            position: relative;
+        }
+
+        #finishImg img {
+            position: absolute;
+            height: 200px;
+        }
+
+        #finishImg #end0 {
+            height: 300px;
+            width: auto;
+        }
+
+        #finish > div, #finish > img{
+            font-size: 30px;
+            font-family: Helvetica, Arial, sans-serif;
+            padding: 15px 0px 0px 0px;
+        }
+
+        #finishButton {
+            display: flex;
+            flex-flow: row;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 10px;
+            background-color: #af4e4c; /* ボタンの背景色 */
+            color: white; /* テキストの色 */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 8px; /* 角丸 */
+            border: none;
+            cursor: pointer;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .button:hover {
+            background-color: #a04545; /* マウスホバー時の背景色 */
+        }
+
+        #eachcount {
+            display: flex;
+            flex-flow: row;
+        }
+
+        #eachcount div {
+            font-size: 20px;
+        }
+
+        #eachcount img {
+            height: 20px;
+            width: auto;
+        }
+
+        #bestscore {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+        }
+        #bestscore div {
+            font-size: 15px;
+            padding: 0px 5px;
+        }
+        #scoretable {
+            display: flex;
+            flex-flow: row;
+        }
+        #first::before {
+            content: "\1F947";
+        }
+        #second::before {
+            content: "\1F948";
+        }
+        #third::before {
+            content: "\1F949";
+        }
+    </style>
+</head>
+<body>
+    <div id="finish">
+        <div>FINISH!!</div>
+        <div id="finishImg">
+            <img src="resouce/end1.png">
+        </div>
+        <div id="score"></div>
+        <div id="log">
+            <div id="eachcount">
+                <img src="resouce/pidan.png" alt="gotten pidan">
+                <div id="pidan"></div>
+                <img src="resouce/mofudori.gif" alt="gotten bird">
+                <div id="bird"></div>
+                <img src="resouce/coin.png" alt="gotten coin">
+                <div id="itemB"></div>
+                <img src="resouce/gem.png" alt="gotten gem">
+                <div id="itemA"></div>
+            </div>
+        </div>
+        <div class="finishButton">
+            <!-- 何故か改行すると空白が入る -->
+            <a href="game.html" class="button">RETRY</a><a href="index.html" class="button">BACK</a>
+        </div>
+        <a href="../index.html" class="button">HOME</a>
+        <div id="bestscore">
+            <div id="scoretable">
+                <div id="first"></div>
+                <div id="second"></div>
+                <div id="third"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function getCookie(name) {
+        let matches = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+        return matches ? decodeURIComponent(matches[1]) : null;
+    }
+
+    document.getElementById('score').innerText = getCookie('score') || 0;
+
+    let scoreLog = JSON.parse(getCookie('scorelog')) || { pidan: 0, bird: 0, itemB: 0, itemA: 0, bestscore: [0, 0, 0] };
+
+    document.getElementById('pidan').innerText = '✕' + scoreLog.pidan + '　';
+    document.getElementById('bird').innerText  = '✕' + scoreLog.bird + '　';
+    document.getElementById('itemB').innerText = '✕' + scoreLog.itemB + '　';
+    document.getElementById('itemA').innerText = '✕' + scoreLog.itemA;
+    document.getElementById('first').innerText  = scoreLog.bestscore[0];
+    document.getElementById('second').innerText = scoreLog.bestscore[1];
+    document.getElementById('third').innerText  = scoreLog.bestscore[2];
+
+    const finishImg = document.getElementById('finishImg');
+
+    if (scoreLog.pidan > 0) {
+        const img = document.createElement('img');
+        img.src = 'resouce/end3.png';
+        finishImg.appendChild(img);
+    }
+    if (scoreLog.bird > 0) {
+        const img = document.createElement('img');
+        img.src = 'resouce/end2.png';
+        finishImg.appendChild(img);
+    }
+    if (scoreLog.itemA + scoreLog.itemB < 1) {
+        finishImg.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = 'resouce/end0.png';
+        img.id = 'end0';
+        finishImg.appendChild(img);
+    }
+</script>
+</html>
