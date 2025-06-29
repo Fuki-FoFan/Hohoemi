@@ -3,15 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アイテムキャッチゲーム</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preload" href="partyordie.gif" as="image">
-    <link rel="preload" href="Ggrape.png" as="image">
-    <link rel="preload" href="Pgrape.png" as="image">
-    <link rel="preload" href="egg_pitan.png" as="image">
-    <link rel="preload" href="cage.png" as="image">
+    <title>Hokusoemi BaBaoFan</title>
+    <meta name="description" content="八宝飯をお宝のもとに導きましょう" />
+    <meta property="og:url" content="https://fuki-fofan.github.io/Hohoemi/treasure/index.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="ほくそえみ八宝飯" />
+    <meta property="og:description" content="八宝飯をお宝のもとに導きましょう" />
+    <meta property="og:site_name" content="フーファンFG" />
+    <meta property="og:image" content="https://fuki-fofan.github.io/Hohoemi/treasure/resource/icon.png" />
+    <link rel="preload" href="resouce/mofudori.gif" as="image">
+    <link rel="preload" href="resouce/collectMofu.png" as="image">
+    <link rel="preload" href="resouce/collectPidan.png" as="image">
+    <link rel="preload" href="resouce/pidan.png" as="image">
+    <link rel="preload" href="resouce/gem.png" as="image">
+    <link rel="preload" href="resouce/coin.png" as="image">
+    <link rel="shortcut icon" href="resource/icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="resource/icon.png">
+    <style>
+        #home {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+        }
+
+        #home div, #home img{
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        #home div {
+            font-size: 30px;
+            padding: 20px 0px 0px 0px;
+        }
+
+        #home img {
+            padding: 15px 0px 0px 0px;
+            width: auto;
+            height: 240px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 10px;
+            background-color: #af4e4c; /* ボタンの背景色 */
+            color: white; /* テキストの色 */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 8px; /* 角丸 */
+            border: none;
+            cursor: pointer;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .button:hover {
+            background-color: #a04545; /* マウスホバー時の背景色 */
+        }
+    </style>
 </head>
 <body>
-    <a href="game.html">START</a>
+    <div id="home">
+        <div><ruby>ほくそえみ<rt>Hokusoemi</rt></ruby><ruby>八宝飯<rt>BaBaoFan</rt></ruby></div>
+        <img src="resouce/treasure.png" alt="hokusoemi game start">
+        <a href="game.html" class="button">START</a>
+        <a href="../index.html" class="button">BACK</a>
+    </div>
 </body>
 </html>

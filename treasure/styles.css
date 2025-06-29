@@ -1,17 +1,19 @@
 :root{
-    --chara-img: url(cage.png);
-    --chara-width: 100px;
-    --chara-height: 50px;
-    --itemA-img: url(Ggrape.png);
-    --itemB-img: url(Pgrape.png);
-    --item-width: 30px;
-    --item-height: 30px;
-    --bird-img: url(partyordie.gif);
-    --bird-width: 35px;
-    --bird-height: 25px;
-    --pidan-img: url(egg_pitan.png);
-    --pidan-width: 44px;
-    --pidan-height: 36px;
+    --chara-img: url(resouce/collectGem.png);
+    --chara-getBird: url(resouce/collectMofu.png);
+    --chara-getPidan: url(resouce/collectPidan.png);
+    --chara-width: 80px;
+    --chara-height: 100px;
+    --itemA-img: url(resouce/gem.png);
+    --itemB-img: url(resouce/coin.png);
+    --item-width: 20px;
+    --item-height: auto;
+    --bird-img: url(resouce/mofudori.gif);
+    --bird-width: 40px;
+    --bird-height: 32px;
+    --pidan-img: url(resouce/pidan.png);
+    --pidan-width: 33px;
+    --pidan-height: 27px;
 }
 
 body {
@@ -107,7 +109,6 @@ body {
     background-image: var(--itemA-img);
     background-size: contain;
     background-repeat: no-repeat;
-    border-radius: 50%;
 }
 
 .itemB {
@@ -117,7 +118,6 @@ body {
     background-image: var(--itemB-img);
     background-size: contain;
     background-repeat: no-repeat;
-    border-radius: 50%;
 }
 
 .bird {
@@ -127,7 +127,6 @@ body {
     background-image: var(--bird-img);
     background-size: contain;
     background-repeat: no-repeat;
-    border-radius: 50%;
 }
 
 .pidan {
@@ -137,5 +136,4 @@ body {
     background-image: var(--pidan-img);
     background-size: contain;
     background-repeat: no-repeat;
-    border-radius: 50%;
 }
